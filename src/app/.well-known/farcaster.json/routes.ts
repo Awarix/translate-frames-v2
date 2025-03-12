@@ -1,26 +1,22 @@
 export async function GET() {
-    const appUrl = 'https://translate-frames-v2.vercel.app';
-  
     const config = {
-      accountAssociation: {
-        header:
-          "eyJmaWQiOjM2MjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyY2Q4NWEwOTMyNjFmNTkyNzA4MDRBNkVBNjk3Q2VBNENlQkVjYWZFIn0",
-        payload: "eyJkb21haW4iOiJmcmFtZXMtdjIudmVyY2VsLmFwcCJ9",
-        signature:
-          "MHhiNDIwMzQ1MGZkNzgzYTExZjRiOTllZTFlYjA3NmMwOTdjM2JkOTY1NGM2ODZjYjkyZTAyMzk2Y2Q0YjU2MWY1MjY5NjI5ZGQ5NTliYjU0YzEwOGI4OGVmNjdjMTVlZTdjZDc2YTRiMGU5NzkzNzA3YzkxYzFkOWFjNTg0YmQzNjFi",
+      "accountAssociation": {
+        "header": "eyJmaWQiOjExNTM2LCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4NDVFMjNCMjU3ZDAwYzUyNkMxQjZjRjE4QjljNTE2MDcyOTQwRjVjMyJ9",
+        "payload": "eyJkb21haW4iOiJ0cmFuc2xhdGUtZnJhbWVzLXYyLnZlcmNlbC5hcHAifQ",
+        "signature": "MHhmZmI0NGZlMjgzMzVjZGFjMmYxYzlhMjI2N2M4ZTM2YTRkNGU4Njc5ZjVhYjQ5Y2ZmZDU0MzY4MTQwZTJhZGU5NTMxNDE3MTdkMjE5ZGZlMjg4MGY5YWE4Y2M1YzczNTA5MmYyZjRhZDIyNDBiY2QxNDhlYjMxYmFmNjZlOGVhNTFi"
       },
-      frame: {
-        version: "1",
-        name: "Translate Game",
-        description: "A fun game to test your language translation skills!",
-        iconUrl: `${appUrl}/icon.png`,
-        homeUrl: appUrl,
-        imageUrl: `${appUrl}/frames/hello/opengraph-image`,
-        buttonTitle: "Launch Frame",
-        splashImageUrl: `${appUrl}/splash.png`,
-        splashBackgroundColor: "#f7f7f7",
-        webhookUrl: `${appUrl}/api/webhook`,
-      },
+      "frame": {
+        "version": "1",
+        "name": "Translate Game",
+        "description": "A fun game to test your language skills",
+        "iconUrl": "https://translate-frames-v2.vercel.app/google-translate.svg",
+        "homeUrl": "https://translate-frames-v2.vercel.app",
+        "imageUrl": "https://translate-frames-v2.vercel.app/google-translate.svg",
+        "buttonTitle": "Dare to Play?",
+        "splashImageUrl": "https://frames-v2.vercel.app/splash.png",
+        "splashBackgroundColor": "#eeccff",
+        "webhookUrl": "https://translate-frames-v2.vercel.app/api/webhook"
+      }
     };
   
     return Response.json(config);
