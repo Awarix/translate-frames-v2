@@ -102,20 +102,14 @@ export default function LanguageGame(
 
           {/* Vertically aligned buttons */}
           <div className="flex flex-col items-center gap-4 mt-6">
-            <Button
-              onClick={() => window.open('https://warpcast.com/sarvesh371.eth', '_blank')}
-              className="bg-purple-500 px-4 py-2 w-full"
-            >
-              Follow Creator 🚀
-            </Button>
-
-            <Button
-              onClick={() => window.open(`https://warpcast.com/~/compose?text=Check%20out%20this%20fun%20translate%20game%20by%20@sarvesh371.eth&embeds[]=${appUrl}`, '_blank')}
-              className="bg-green-500 px-4 py-2 w-full"
-            >
-              Share Frame 📤
-            </Button>
-
+          <Button
+            onClick={() => {
+              window.open('https://warpcast.com/sarvesh371.eth', '_blank', 'noopener,noreferrer');
+            }}
+            className="bg-purple-500 px-4 py-2 w-full"
+          >
+            Follow Creator 🚀
+          </Button>
             <Button
               onClick={() => {
                 const shareText = `Scored ${score}/${maxRounds} in this fun translate game, frame by @sarvesh371.eth`;
