@@ -1,4 +1,5 @@
 export async function GET() {
+    const appUrl = process.env.NEXT_PUBLIC_URL;
     const config = {
       "accountAssociation": {
         "header": "eyJmaWQiOjExNTM2LCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4NDVFMjNCMjU3ZDAwYzUyNkMxQjZjRjE4QjljNTE2MDcyOTQwRjVjMyJ9",
@@ -9,13 +10,13 @@ export async function GET() {
         "version": "1",
         "name": "Translate Game",
         "description": "A fun game to test your language skills",
-        "iconUrl": "https://translate-frames-v2.vercel.app/google-translate.svg",
-        "homeUrl": "https://translate-frames-v2.vercel.app",
-        "imageUrl": "https://translate-frames-v2.vercel.app/google-translate.svg",
+        "iconUrl": `${appUrl}/google-translate.png`,
+        "homeUrl": appUrl,
+        "imageUrl": `${appUrl}/google-translate.png`,
         "buttonTitle": "Dare to Play?",
         "splashImageUrl": "https://frames-v2.vercel.app/splash.png",
         "splashBackgroundColor": "#eeccff",
-        "webhookUrl": "https://translate-frames-v2.vercel.app/api/webhook"
+        "webhookUrl": `${appUrl}/api/webhook`,
       }
     };
   

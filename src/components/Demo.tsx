@@ -4,7 +4,9 @@ import Button from './Button';
 import Confetti from 'react-confetti';
 
 
-export default function LanguageGame() {
+export default function LanguageGame(
+  { title }: { title?: string } = { title: "Translate Game" }
+) {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -12,6 +14,8 @@ export default function LanguageGame() {
   const [gameOver, setGameOver] = useState(false);
   const maxRounds = 10;
   const resultRef = useRef(null);
+
+  const appUrl = process.env.NEXT_PUBLIC_URL;
   
   const [remainingQuestions, setRemainingQuestions] = useState([
     { word: "Bonjour", options: ["Hello", "Goodbye"], answer: "Hello" },
@@ -106,7 +110,7 @@ export default function LanguageGame() {
             </Button>
 
             <Button
-              onClick={() => window.open('https://warpcast.com/~/compose?text=Check%20out%20this%20fun%20translate%20game%20by%20@sarvesh371.eth&embeds[]=https://translate-frames-v2.vercel.app', '_blank')}
+              onClick={() => window.open(`https://warpcast.com/~/compose?text=Check%20out%20this%20fun%20translate%20game%20by%20@sarvesh371.eth&embeds[]=${appUrl}`, '_blank')}
               className="bg-green-500 px-4 py-2 w-full"
             >
               Share Frame 📤
@@ -115,7 +119,7 @@ export default function LanguageGame() {
             <Button
               onClick={() => {
                 const shareText = `Scored ${score}/${maxRounds} in this fun translate game, frame by @sarvesh371.eth`;
-                const url = `https://warpcast.com/~/compose?text=${encodeURIComponent(shareText)}&embeds[]=https://translate-frames-v2.vercel.app`;
+                const url = `https://warpcast.com/~/compose?text=${encodeURIComponent(shareText)}&embeds[]=${appUrl}`;
                 window.open(url, '_blank');
               }}
               className="bg-green-500 px-4 py-2 w-full"
